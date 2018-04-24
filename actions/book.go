@@ -3,11 +3,12 @@ package actions
 import (
 	"buf1/models"
 
+	. "buf1/actions/funclib"
+
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/pop"
 	"github.com/gobuffalo/uuid"
 	"github.com/pkg/errors"
-	. "buf1/actions/funclib"
 )
 
 // BookAdd default implementation.
@@ -75,7 +76,7 @@ func BookEditcommit(c buffalo.Context) error {
 			return err
 		}
 		id := c.Request().Form["ID"][0]
-		
+
 		b := models.Book{}
 
 		tx := c.Value("tx").(*pop.Connection)
@@ -88,11 +89,11 @@ func BookEditcommit(c buffalo.Context) error {
 		if err := c.Bind(&b); err != nil {
 			return err
 		}
-		
+
 		if err := tx.Update(&b); err != nil {
 			return err
 		}
-		logger.Infof("Book saved:%#v" , b)
+		logger.Infof("Book saved:%#v", b)
 		c.Flash().Add("success", "Book successfully saved.")
 		c.Set("book", b)
 		return c.Redirect(302, "/book/list")
@@ -117,7 +118,7 @@ func BookAddcommit(c buffalo.Context) error {
 		if err := tx.Save(&b); err != nil {
 			return err
 		}
-		
+
 		c.Flash().Add("success", "Book successfully saved.")
 		return c.Redirect(302, "/book/list")
 	} else {
@@ -133,7 +134,7 @@ func BookRemovecommit(c buffalo.Context) error {
 		}
 		//logger.Infof("Request ID: %#v", c.Request().Form["ID"][0])
 		id := c.Request().Form["ID"][0]
-		
+
 		b := models.Book{}
 		tx := c.Value("tx").(*pop.Connection)
 

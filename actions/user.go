@@ -152,7 +152,7 @@ func UserEditcommit(c buffalo.Context) error {
 		}
 
 		logger.Infof("User: %v", u)
-
+		
 		if err := tx.Update(&u); err != nil {
 			return err
 		}

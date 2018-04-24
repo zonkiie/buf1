@@ -1,7 +1,8 @@
 #!/bin/sh
 
-buffalo db generate model Book Name:text -s -d
-buffalo db generate model User Username:text Email:text Passwordhash:text Book:[]Book -s -d
+#buffalo db generate model Book Name:text -s -d
+#buffalo db generate model User Username:text Email:text Passwordhash:text Book:[]Book -s -d
+
 #soda generate fizz User -d
 #soda create -d database.yml
 #buffalo db create -a
