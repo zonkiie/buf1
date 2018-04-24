@@ -1,0 +1,22 @@
+<h1>Book#List</h1>
+
+<%= for (bookindex, book) in books { %>
+		<ul><%= bookindex %> - <%= book.Name %>
+<%= form_for(book, {action: editBookPath()}) { %>
+  <%= f.HiddenTag("ID") %>
+  <button class="btn btn-success">Edit</button>
+<% } %>
+
+<%= form_for(book, {action: bookRemovePath()}) { %>
+  <%= f.HiddenTag("ID") %>
+  <button class="btn btn-success">Delete</button>
+<% } %>
+
+</ul>
+<% } %>
+
+<BR>
+<A HREF="/book/add">Add Book</A>
+<BR>
+<A HREF="/">Main Page</A>
+

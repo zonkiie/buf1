@@ -1,0 +1,12 @@
+<h1>Book#Edit</h1>
+
+<%= form_for(book, {action: bookEditcommitPath()}) { %>
+  <%= f.InputTag("Name") %>
+  <%= f.HiddenTag("ID") %>
+  <button class="btn btn-success">Save</button>
+<%# } %>
+
+<BR>
+<A HREF="/book/list">Book Listing</A>
+<BR>
+<A HREF="/">Main Page</A>

@@ -1,0 +1,12 @@
+<h1>Book#Remove</h1>
+
+<%= form_for(book, {action: bookRemovecommitPath()}) { %>
+Remove Book <%= book.Name %>?
+  <%= f.HiddenTag("ID") %>
+  <button class="btn btn-success">Remove</button>
+<%# } %>
+
+<BR>
+<A HREF="/book/list">Book Listing</A>
+<BR>
+<A HREF="/">Main Page</A>

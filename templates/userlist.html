@@ -1,0 +1,13 @@
+<H1>Userlist</H1>
+
+Debug: <%= debug(users) %>
+
+
+<%= for (index, user) in users { %>
+	<li><%= index %> - <%= user.Username %> <%= user.Email %> Books:
+	<%= for (bookindex, book) in user.Book { %>
+		<ul><%= bookindex %> - <%= book.Name %> </ul>
+	<% } %>
+<% } %>
+
+<A HREF="/">Main Page</A>

@@ -1,0 +1,15 @@
+<h1>User#Login</h1>
+
+<%= if (errors) { %>
+Previous Errors:
+<%= debug(errors) %>
+<% } %>
+
+<%= form_for(user, {action: userLogincommitPath()}) { %>
+  <%= f.InputTag("Email", {value:"user@example.com"}) %> <A HREF="#" onClick="document.getElementsByName('Email')[0].value = ''">Clear input field</A>
+  <%= f.InputTag("Password", {type: "password"}) %>
+  <button class="btn btn-success">Sign In!</button>
+<% } %>
+
+<BR>
+<A HREF="/">Main Page</A>

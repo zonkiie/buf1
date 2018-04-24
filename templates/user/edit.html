@@ -1,0 +1,20 @@
+<h1>User#Edit</h1>
+
+<%= debug(user) %>
+
+<%= form_for(user, {action: userEditcommitPath()}) { %>
+  <%= f.InputTag("Username") %>
+  <%= f.InputTag("Email") %>
+  <%= f.InputTag("Password", {type: "password"}) %>
+  <%= f.InputTag("PasswordConfirmation", {type: "password"}) %>
+  <button class="btn btn-success">Save</button>
+<% } %>
+
+<BR>
+
+<%= form_for(user, {action: userRemovePath()}) { %>
+  <button class="btn btn-success">Remove</button>
+<% } %>
+
+<BR>
+<A HREF="/">Main Page</A>

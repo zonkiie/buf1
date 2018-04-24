@@ -1,0 +1,10 @@
+<h1>User#Remove</h1>
+
+<%= form_for(user, {action: userRemoveconfirmPath()}) { %>
+	Remove your User <%= user.Username %> (<%= user.Email%>)?
+  <button class="btn btn-success">Confirm</button>
+<% } %>
+
+<BR>
+
+<A HREF="/">Main Page</A>
